@@ -24,7 +24,7 @@ class PlayGroundApp : Application(), HasActivityInjector {
         if (BuildConfig.DEBUG) {
             Timber.plant(Timber.DebugTree())
         }
-//        AppInjector.init(this)
+
         DaggerAppComponentJava
                 .builder()
                 .application(this)
