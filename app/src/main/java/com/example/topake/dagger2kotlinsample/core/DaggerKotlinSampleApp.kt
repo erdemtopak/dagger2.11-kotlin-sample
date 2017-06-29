@@ -4,6 +4,7 @@ import android.app.Activity
 import android.app.Application
 import com.example.topake.dagger2kotlinsample.BuildConfig
 import com.example.topake.dagger2kotlinsample.di.DaggerAppComponentJava
+import com.example.topake.dagger2kotlinsample.di.DaggerAppComponentKotlin
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasActivityInjector
@@ -15,7 +16,7 @@ import javax.inject.Inject
  * Created by topake on 28/06/2017.
  */
 
-class PlayGroundApp : Application(), HasActivityInjector {
+class DaggerKotlinSampleApp : Application(), HasActivityInjector {
 
     @Inject lateinit var dispatchingActivityInjector: DispatchingAndroidInjector<Activity>
 
@@ -25,7 +26,7 @@ class PlayGroundApp : Application(), HasActivityInjector {
             Timber.plant(Timber.DebugTree())
         }
 
-        DaggerAppComponentJava
+        DaggerAppComponentKotlin
                 .builder()
                 .application(this)
                 .build()
