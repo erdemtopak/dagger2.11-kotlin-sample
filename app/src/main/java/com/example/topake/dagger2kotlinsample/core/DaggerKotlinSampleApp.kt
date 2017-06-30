@@ -3,8 +3,7 @@ package com.example.topake.dagger2kotlinsample.core
 import android.app.Activity
 import android.app.Application
 import com.example.topake.dagger2kotlinsample.BuildConfig
-import com.example.topake.dagger2kotlinsample.di.DaggerAppComponentJava
-import com.example.topake.dagger2kotlinsample.di.DaggerAppComponentKotlin
+import com.example.topake.dagger2kotlinsample.di.DaggerAppComponent
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasActivityInjector
@@ -26,7 +25,7 @@ class DaggerKotlinSampleApp : Application(), HasActivityInjector {
             Timber.plant(Timber.DebugTree())
         }
 
-        DaggerAppComponentKotlin
+        DaggerAppComponent
                 .builder()
                 .application(this)
                 .build()
